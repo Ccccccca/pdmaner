@@ -37,9 +37,9 @@ export default React.memo(({style, prefix, dataSource, onSelected, menuType,
         const onOk = () => {
             const validateMetaData = () => {
                 const requiredNames = ['defName', 'type'];
-               if (!tempData.type || (tempData.type === 'URL' && requiredNames.concat('url').some(n => !tempData[n]))) {
+               if (!tempData.type || (tempData.type === 'URL' && requiredNames.concat('url').some((n) => !tempData[n]))) {
                     return FormatMessage.string({id: 'components.compare.notAllowEmpty'});
-                } else if(tempData.type === 'FILE' && requiredNames.concat('file').some(n => !tempData[n])) {
+                } else if(tempData.type === 'FILE' && requiredNames.concat('file').some((n) => !tempData[n])) {
                    return FormatMessage.string({id: 'components.compare.notAllowEmpty'});
                } else if(metaData.findIndex((m) => {
                     return (m.defName === tempData.defName) && (m.defKey !== tempData.defKey);

@@ -29,6 +29,7 @@ function createWindow() {
     }
   });
 
+  require("@electron/remote/main").enable(win.webContents)
   // 然后加载应用的 index.html。
   if (process.env.CHINER_NODE_ENV === 'development') {
     var profile = require('../profile');
@@ -201,6 +202,8 @@ function createWindow() {
   }
   Menu.setApplicationMenu(menu);
 }
+
+
 
 // Electron 会在初始化后并准备
 // 创建浏览器窗口时，调用这个函数。
